@@ -13,8 +13,11 @@ export default function TabLayout() {
 
   return (
     <Tabs
+        initialRouteName="home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "#C67C4E",
+          tabBarInactiveTintColor: "#313131",
+          tabBarShowLabel: false,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -23,23 +26,48 @@ export default function TabLayout() {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
-          default: {},
+          default: {
+              backgroundColor: "#F9F2ED",
+              height: 80,
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              position: 'absolute',
+              flexDirection: "row",
+              paddingBottom: 30
+
+          },
         }),
       }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        <Tabs.Screen
+            name="home"
+            options={{
+                title: 'Home',
+                tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+            }}
+        />
+        <Tabs.Screen
+            name="favorites"
+            options={{
+                title: 'Favorites',
+                tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+            }}
+        />
+        <Tabs.Screen
+            name="cart"
+            options={{
+                title: 'Cart',
+                tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+            }}
+        />
+        <Tabs.Screen
+            name="notifications"
+            options={{
+                title: 'Notifications',
+                tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+            }}
+        />
     </Tabs>
   );
 }
