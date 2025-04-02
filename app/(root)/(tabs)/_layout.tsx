@@ -20,14 +20,14 @@ export default function TabLayout() {
           tabBarShowLabel: false,
         headerShown: false,
         tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
+        // tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
           default: {
-              backgroundColor: "#F9F2ED",
+              backgroundColor: "white",
               height: 80,
               overflow: 'hidden',
               display: 'flex',
@@ -35,7 +35,9 @@ export default function TabLayout() {
               justifyContent: 'space-between',
               position: 'absolute',
               flexDirection: "row",
-              paddingBottom: 30
+              paddingBottom: 30,
+              borderTopLeftRadius: 20,
+              borderTopRightRadius: 20,
 
           },
         }),
